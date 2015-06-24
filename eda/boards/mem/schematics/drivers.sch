@@ -85,8 +85,6 @@ T 50000 40700 9 10 1 0 0 0 1
 IO & data memory busline drivers
 T 49900 40400 9 10 1 0 0 0 1
 drivers.sch
-T 53800 40400 9 10 1 0 0 0 1
-REVISION
 C 43400 44300 1 0 0 74244-1.sym
 {
 T 43700 47450 5 10 0 0 0 0 1

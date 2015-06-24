@@ -85,8 +85,6 @@ T 50000 40700 9 10 1 0 0 0 1
 Memory board connectors (2)
 T 49900 40400 9 10 1 0 0 0 1
 conns2.sch
-T 53800 40400 9 10 1 0 0 0 1
-REVISION
 C 43900 49000 1 0 0 output-2.sym
 {
 T 44800 49200 5 10 0 0 0 0 1

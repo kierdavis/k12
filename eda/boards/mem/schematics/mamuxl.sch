@@ -292,5 +292,3 @@ T 50000 40700 9 10 1 0 0 0 1
 Memory address multiplexer (bits 7-0)
 T 49900 40400 9 10 1 0 0 0 1
 mamuxl.sch
-T 53800 40400 9 10 1 0 0 0 1
-REVISION

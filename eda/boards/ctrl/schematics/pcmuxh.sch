@@ -292,5 +292,3 @@ T 50000 40700 9 10 1 0 0 0 1
 PC input multiplexer (bits 15-8)
 T 49900 40400 9 10 1 0 0 0 1
 pcmuxh.sch
-T 53800 40400 9 10 1 0 0 0 1
-REVISION
