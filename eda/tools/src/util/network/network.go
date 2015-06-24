@@ -115,15 +115,17 @@ func (g *Undirected) HasNode(node Node) bool {
 // Find a minimal spanning tree using Prim's algorithm.
 // https://en.wikipedia.org/wiki/Prim%27s_algorithm
 func (g *Undirected) MinimalSpanningTree() (mst *Undirected) {
+	mst = NewUndirected()
+	
 	nodes := g.Nodes()
 	numNodes := len(g.Nodes())
-	start := nodes[0]
-	
-	mst = NewUndirected()
+	if numNodes == 0 {
+		return mst
+	}
 	
 	// Begin with tree containing only the start node.
 	var nodesInMST nodeSet
-	nodesInMST.insert(start)
+	nodesInMST.insert(nodes[0])
 	
 	for len(nodesInMST) < numNodes {
 		// Find the lowest weight edge connecting a node in the tree to a node
