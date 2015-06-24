@@ -215,8 +215,6 @@ value=INST10
 }
 T 50000 40700 9 10 1 0 0 0 1
 ALU output multiplexer (bits 7 & 6)
-T 53800 40400 9 10 1 0 0 0 1
-REVISION
 T 49900 40400 9 10 1 0 0 0 1
 outmux76.sch
 C 44800 42100 1 0 0 gnd-1.sym

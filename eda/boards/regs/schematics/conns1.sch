@@ -362,8 +362,6 @@ T 50000 40700 9 10 1 0 0 0 1
 Register board connectors (1)
 T 49900 40400 9 10 1 0 0 0 1
 conns1.sch
-T 53800 40400 9 10 1 0 0 0 1
-REVISION
 C 53500 49000 1 0 0 output-2.sym
 {
 T 54400 49200 5 10 0 0 0 0 1

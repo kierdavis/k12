@@ -218,8 +218,6 @@ T 50000 40700 9 10 1 0 0 0 1
 Register clock enable logic
 T 49900 40400 9 10 1 0 0 0 1
 ckelogic.sch
-T 53800 40400 9 10 1 0 0 0 1
-REVISION
 C 44300 43800 1 0 0 7408-2.sym
 {
 T 45000 44700 5 10 0 0 0 0 1

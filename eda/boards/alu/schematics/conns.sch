@@ -346,8 +346,6 @@ T 50000 40700 9 10 1 0 0 0 1
 ALU board connectors
 T 49900 40400 9 10 1 0 0 0 1
 conns.sch
-T 53800 40400 9 10 1 0 0 0 1
-REVISION
 C 41800 46500 1 0 0 connector10-1.sym
 {
 T 43700 49500 5 10 0 0 0 0 1

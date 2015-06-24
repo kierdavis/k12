@@ -281,8 +281,6 @@ T 50000 40700 9 10 1 0 0 0 1
 ALU B/immediate multiplexer
 T 49900 40400 9 10 1 0 0 0 1
 bimux.sch
-T 53800 40400 9 10 1 0 0 0 1
-REVISION
 C 49400 44400 1 0 0 input-2.sym
 {
 T 49400 44600 5 10 0 0 0 0 1

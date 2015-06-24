@@ -476,5 +476,3 @@ T 50000 40700 9 10 1 0 0 0 1
 Register A input multiplexers
 T 49900 40400 9 10 1 0 0 0 1
 amux.sch
-T 53800 40400 9 10 1 0 0 0 1
-REVISION

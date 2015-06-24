@@ -215,8 +215,6 @@ value=INST10
 }
 T 50000 40700 9 10 1 0 0 0 1
 ALU output multiplexer (bits 5 & 4)
-T 53800 40400 9 10 1 0 0 0 1
-REVISION
 T 49900 40400 9 10 1 0 0 0 1
 outmux54.sch
 C 44800 42100 1 0 0 gnd-1.sym

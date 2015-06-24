@@ -170,8 +170,6 @@ N 52300 44000 52700 44000 4
 N 52300 42500 52700 42500 4
 T 50000 40700 9 10 1 0 0 0 1
 ALU adder input inverters & "subtract" signal generation
-T 53800 40400 9 10 1 0 0 0 1
-REVISION
 T 49900 40400 9 10 1 0 0 0 1
 adder-invs.sch
 C 45000 46500 1 0 0 7486-1.sym
