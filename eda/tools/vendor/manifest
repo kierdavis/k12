@@ -1,0 +1,19 @@
+{
+	"version": 0,
+	"dependencies": [
+		{
+			"importpath": "github.com/kierdavis/gosch",
+			"repository": "https://github.com/kierdavis/gosch",
+			"revision": "aa4d62f8fb5d661f6ef65498f18876a5a5129ec4",
+			"branch": "master",
+			"path": ""
+		},
+		{
+			"importpath": "github.com/BurntSushi/toml",
+			"repository": "https://github.com/BurntSushi/toml",
+			"revision": "056c9bc7be7190eaa7715723883caffa5f8fa3e4",
+			"branch": "master",
+			"path": ""
+		}
+	]
+}
