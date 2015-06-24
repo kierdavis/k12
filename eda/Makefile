@@ -3,7 +3,7 @@ BOARD_DIR = .
 EDA_DIR = ${BOARD_DIR}/../..
 
 SCHEMATICS_DIR = ${BOARD_DIR}/schematics
-LAYOUT_DIR = ${BOARD_DIR}/layout
+BUILD_DIR = ${BOARD_DIR}/build
 
 FOOTPRINTS_DIR = ${EDA_DIR}/footprints
 TOOLS_DIR = ${EDA_DIR}/tools
@@ -18,12 +18,12 @@ FOOTPRINTS = $(shell find ${FOOTPRINTS_DIR} -type f -name '*.toml')
 
 SYMPATH = ${EDA_DIR}/geda-syms
 
-PARTLIST = ${BOARD_DIR}/parts.txt
-NETLIST = ${LAYOUT_DIR}/netlist.net
-INITIAL_LAYOUT = ${LAYOUT_DIR}/layout-initial.toml
-ROUTED_LAYOUT = ${LAYOUT_DIR}/layout-routed.toml
-INITIAL_LAYOUT_SVG = ${LAYOUT_DIR}/layout-initial.svg
-ROUTED_LAYOUT_SVG = ${LAYOUT_DIR}/layout-routed.svg
+PARTLIST = ${BUILD_DIR}/parts.txt
+NETLIST = ${BUILD_DIR}/netlist.net
+INITIAL_LAYOUT = ${BOARD_DIR}/layout.toml
+ROUTED_LAYOUT = ${BUILD_DIR}/routed.toml
+INITIAL_LAYOUT_SVG = ${BUILD_DIR}/layout.svg
+ROUTED_LAYOUT_SVG = ${BUILD_DIR}/routed.svg
 
 ${PARTLIST}: ${PARTLIST_BIN} ${SCHEMATICS}
 	${PARTLIST_BIN} -sympath ${SYMPATH} -output ${PARTLIST} ${SCHEMATICS}
