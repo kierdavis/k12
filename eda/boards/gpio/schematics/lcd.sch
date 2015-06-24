@@ -4,6 +4,10 @@ C 49000 43600 1 0 0 LCD-1.sym
 {
 T 50000 49175 5 10 0 0 0 0 1
 device=LCD
+T 49400 49000 5 10 1 1 0 0 1
+refdes=U?
+T 49000 43600 5 10 1 1 0 0 1
+x-appdesc=LCD
 }
 C 48700 43500 1 0 0 gnd-1.sym
 N 49000 43900 48800 43900 4
@@ -117,10 +121,14 @@ C 46100 48300 1 270 0 pot-1.sym
 {
 T 47000 47500 5 10 0 0 270 0 1
 device=VARIABLE_RESISTOR
-T 46500 47600 5 10 1 1 0 0 1
+T 46500 48000 5 10 1 1 0 0 1
 refdes=R?
 T 47600 47500 5 10 0 0 270 0 1
 footprint=none
+T 46500 47600 5 10 1 1 0 0 1
+value=?
+T 46100 48300 5 10 0 1 0 0 1
+x-appdesc=LCD contrast adjustment potentiometer
 }
 N 46700 47800 49000 47800 4
 C 46100 47000 1 0 0 gnd-1.sym
@@ -133,6 +141,10 @@ T 45900 44600 5 10 0 0 90 0 1
 device=RESISTOR
 T 46000 45000 5 10 1 1 180 0 1
 refdes=R?
+T 46300 44300 5 10 0 1 0 0 1
+x-appdesc=LCD backlight resistor
+T 45800 44600 5 10 1 1 0 0 1
+value=?
 }
 C 46200 45300 1 90 0 switch-spst-1.sym
 {
@@ -140,6 +152,8 @@ T 45500 45700 5 10 0 0 90 0 1
 device=SPST
 T 45900 45800 5 10 1 1 180 0 1
 refdes=S?
+T 46200 45300 5 10 0 1 0 0 1
+x-appdesc=LCD backlight switch
 }
 C 46000 46200 1 0 0 vcc-1.sym
 N 46200 46100 46200 46200 4
