@@ -1,14 +1,12 @@
-v 20050820 1
+v 20130925 2
 T 100 100 0 1 0 0 0 0 1
 gedasymbols::url=http://www.gedasymbols.org/user/ales_hvezda/symbols/lts546ap-1.sym
 T 2100 2850 8 10 1 1 0 0 1
 refdes=D?
 T 0 4300 5 10 0 0 0 0 1
-device=LTS-546AP
+device=none
 T 0 4100 5 10 0 0 0 0 1
 description=7-segment-display with common anode
-T 0 3900 5 10 0 0 0 0 1
-documentation=http://www.liteon.com.tw/OPTO/SPEC/DATABOOK.NSF/PASN/DS-30-98-055/$file/S546AP.pdf
 T 0 3700 5 10 0 0 0 0 1
 numslots=0
 T 0 3500 5 10 0 0 0 0 1
@@ -68,59 +66,59 @@ pinlabel=dp
 T 1750 200 5 8 0 1 270 2 1
 pintype=pas
 }
-P 1800 3000 1800 3300 1 0 0
+P 1800 3300 1800 3000 1 0 0
 {
-T 1850 3100 5 8 0 1 0 0 1
+T 1750 3200 5 8 0 1 0 2 1
 pinseq=6
-T 1850 3100 5 8 1 1 0 0 1
+T 1855 3200 5 8 1 1 0 2 1
 pinnumber=6
-T 1800 2950 9 8 1 1 0 5 1
+T 1805 2850 9 8 1 1 0 3 1
 pinlabel=b
-T 1750 3100 5 8 0 1 90 0 1
+T 1850 3200 5 8 0 1 270 2 1
 pintype=pas
 }
-P 1400 3000 1400 3300 1 0 0
+P 1400 3300 1400 3000 1 0 0
 {
-T 1450 3100 5 8 0 1 0 0 1
+T 1350 3200 5 8 0 1 0 2 1
 pinseq=7
-T 1450 3100 5 8 1 1 0 0 1
+T 1455 3200 5 8 1 1 0 2 1
 pinnumber=7
-T 1400 2950 9 8 1 1 0 5 1
+T 1405 2850 9 8 1 1 0 3 1
 pinlabel=a
-T 1350 3100 5 8 0 1 90 0 1
+T 1450 3200 5 8 0 1 270 2 1
 pintype=pas
 }
-P 1000 3000 1000 3300 1 0 0
+P 1000 3300 1000 3000 1 0 0
 {
-T 1050 3100 5 8 0 1 0 0 1
+T 950 3200 5 8 0 1 0 2 1
 pinseq=8
-T 1050 3100 5 8 1 1 0 0 1
+T 1055 3200 5 8 1 1 0 2 1
 pinnumber=8
-T 1000 2950 9 8 1 1 0 5 1
+T 1005 2850 9 8 1 1 0 3 1
 pinlabel=CA
-T 950 3100 5 8 0 1 90 0 1
+T 1050 3200 5 8 0 1 270 2 1
 pintype=pas
 }
-P 600 3000 600 3300 1 0 0
+P 600 3300 600 3000 1 0 0
 {
-T 650 3100 5 8 0 1 0 0 1
+T 550 3200 5 8 0 1 0 2 1
 pinseq=9
-T 650 3100 5 8 1 1 0 0 1
+T 655 3200 5 8 1 1 0 2 1
 pinnumber=9
-T 600 2950 9 8 1 1 0 5 1
+T 605 2850 9 8 1 1 0 3 1
 pinlabel=f
-T 550 3100 5 8 0 1 90 0 1
+T 650 3200 5 8 0 1 270 2 1
 pintype=pas
 }
-P 200 3000 200 3300 1 0 0
+P 200 3300 200 3000 1 0 0
 {
-T 250 3100 5 8 0 1 0 0 1
+T 150 3200 5 8 0 1 0 2 1
 pinseq=10
-T 250 3100 5 8 1 1 0 0 1
+T 255 3200 5 8 1 1 0 2 1
 pinnumber=10
-T 200 2950 9 8 1 1 0 5 1
+T 205 2850 9 8 1 1 0 3 1
 pinlabel=g
-T 150 3100 5 8 0 1 90 0 1
+T 250 3200 5 8 0 1 270 2 1
 pintype=pas
 }
 B 0 300 2000 2700 3 0 0 0 -1 -1 0 -1 -1 -1 -1 -1
@@ -183,8 +181,9 @@ T 1250 2150 9 10 1 0 0 7 1
 b
 T 1650 700 9 10 1 0 0 0 1
 dp
-T 3600 0 8 10 0 0 0 0 1
-author=Matthieu Crapet mcrapetATgmail.com
+T 3600 0 8 10 0 0 0 0 2
+author=Matthieu Crapet mcrapetATgmail.com (original)
+Kier Davis <kierdavis@gmail.com> (minor changes)
 T 0 0 8 10 0 0 0 0 1
 dist-license=GPL
 T 1600 0 8 10 0 0 0 0 1
