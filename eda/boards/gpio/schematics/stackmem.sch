@@ -385,4 +385,4 @@ N 51100 46700 51100 46900 4
 T 50000 40700 9 10 1 0 0 0 1
 IO port 3 (stack): memory & output drivers
 T 49900 40400 9 10 1 0 0 0 1
-port3stackmem.sch
+stackmem.sch
