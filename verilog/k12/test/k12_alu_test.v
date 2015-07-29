@@ -9,12 +9,12 @@ module k12_alu_test;
     assign numbers[6] = 8'hFE;
     assign numbers[7] = 8'hFF;
     
-    reg [16:0] counter = 0;
+    reg [14:0] counter = 0;
     always #1 counter = counter + 1;
     
     wire [7:0] a = numbers[counter[2:0]];
     wire [7:0] b = numbers[counter[5:3]];
-    wire [15:0] inst = {counter[16:9], numbers[counter[8:6]]};
+    wire [15:0] inst = {2'b00, counter[14:9], numbers[counter[8:6]]};
     wire [7:0] res;
     wire cond;
     
