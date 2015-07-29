@@ -29,7 +29,7 @@ module k12_alu_test;
     initial begin
         $display("a,b,inst,res,cond");
         $monitor("%x,%x,%x,%x,%x", a, b, inst, res, cond);
-        #10
+        #32767
         $finish;
     end
 endmodule
