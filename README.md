@@ -5,7 +5,9 @@ logic gates.
 
 Quick links:
 
-* [Architecture](wiki/Architecture)
+* [Architecture][arch]
+
+[arch]: https://github.com/kierdavis/k12/wiki/Architecture
 
 ## Current status
 
