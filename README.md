@@ -3,6 +3,10 @@
 K12 is a project to design & build a working 8-bit CPU out of 7400-series TTL
 logic gates.
 
+Quick links:
+
+* [Architecture](wiki/Architecture)
+
 ## Current status
 
 As of 29th July 2015, I am currently:
