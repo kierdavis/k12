@@ -1,4 +1,4 @@
-module k12_alu_test;
+module k12_alu_ttl_test;
     wire [7:0] numbers [0:7];
     assign numbers[0] = 8'h00;
     assign numbers[1] = 8'h01;
@@ -18,7 +18,7 @@ module k12_alu_test;
     wire [7:0] res;
     wire cond;
     
-    k12_alu u(
+    k12_alu_ttl u(
         .a(a),
         .b(b),
         .inst(inst),

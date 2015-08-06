@@ -1,4 +1,4 @@
-module k12_alu(
+module k12_alu_ttl(
     input [7:0] a,     // register A
     input [7:0] b,     // register B
     input [15:0] inst, // instruction

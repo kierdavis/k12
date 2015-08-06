@@ -1,4 +1,4 @@
-module k12_regs(
+module k12_regs_ttl(
     
 );
 
