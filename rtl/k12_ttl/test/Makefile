@@ -7,4 +7,4 @@ k12_alu_test.csv.gz: k12_alu_test.vvp
 	./k12_alu_test.vvp | gzip > k12_alu_test.csv.gz
 alu: k12_alu_test.csv.gz
 clean:
-  rm -f k12_alu_test.vvp k12_alu_test.csv.gz
+	rm -f k12_alu_test.vvp k12_alu_test.csv.gz

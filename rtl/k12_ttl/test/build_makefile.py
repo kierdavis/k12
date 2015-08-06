@@ -30,7 +30,7 @@ for target in targets:
     build_files.extend([vvp, csvgz])
 
 print("clean:")
-print("  rm -f %s" % " ".join(build_files))
+print("\trm -f %s" % " ".join(build_files))
 
 #print("all: alu")
 
