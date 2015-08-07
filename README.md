@@ -13,4 +13,4 @@ The list of past, present and future tasks has been moved to a
 [Trello board][trello] since managing it was getting out of hand.
 
 [architecture]: https://github.com/kierdavis/k12/wiki/Architecture
-[trello]: https://trello.com/b/fZMSqqPR/k12
+[trello]: https://trello.com/b/fZMSqqPR
