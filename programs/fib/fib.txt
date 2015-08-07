@@ -1,0 +1,21 @@
+; Program to compute Fibonacci numbers.
+; It assumes that output port 0 is something that can display an 8-bit number.
+
+#section prog                               ; Assembled instructions:
+#origin 0x0000                              ; Addr    Binary               Hex
+
+entry:
+    ; Set up initial conditions
+    mov a, 0                                ; [0000]  0001 1111 0000 0000  1F00
+    mov b, 1                                ; [0001]  0101 1111 0000 0001  5F01
+loop:
+    ; (a, b) <- (b, a + b)
+    mov c, a + b                            ; [0002]  1000 1100 0000 0000  8C00
+    mov a, b                                ; [0003]  0000 1111 0000 0000  0F00
+    mov b, c                                ; [0004]  0110 1000 0000 0000  6800
+    
+    ; Output the number stored in a.
+    out 0, a                                ; [0005]  0101 0000 0000 0000  5000
+    
+    ; Loop again.
+    rjmp loop                               ; [0006]  1100 0111 1111 1100  C7FC
