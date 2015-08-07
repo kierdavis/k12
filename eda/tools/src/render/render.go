@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"image/color"
 	"io"
+	"log"
 )
 
 // Local imports
@@ -52,7 +53,7 @@ func renderComponents(w io.Writer, l *layout.Layout, fps map[string]*footprint.F
 	for refdes, comp := range l.Components {
 		fp := fps[comp.Footprint]
 		if fp == nil {
-			panic("invalid footprint")
+			log.Fatalf("undefined footprint '%s'", comp.Footprint)
 		}
 		
 		fmt.Fprintf(w, "  <g id='comp-%s' transform='translate(%d, %d) rotate(%d)'>\n", refdes, comp.X, comp.Y, comp.Rotate*90)
@@ -75,13 +76,13 @@ func renderWires(w io.Writer, l *layout.Layout, fps map[string]*footprint.Footpr
 	for _, wire := range l.Wires {
 		c1 := l.Components[wire.Component1]
 		if c1 == nil {
-			panic("invalid component")
+			log.Fatalf("undefined component '%s'", wire.Component1)
 		}
 		x1, y1 := pinPos(c1, fps, wire.Pin1)
 		
 		c2 := l.Components[wire.Component2]
 		if c2 == nil {
-			panic("invalid component")
+			log.Fatalf("undefined component '%s'", wire.Component2)
 		}
 		x2, y2 := pinPos(c2, fps, wire.Pin2)
 		
@@ -98,7 +99,7 @@ func renderWires(w io.Writer, l *layout.Layout, fps map[string]*footprint.Footpr
 func pinPos(c *layout.Component, fps map[string]*footprint.Footprint, pin int) (x, y int) {
 	fp := fps[c.Footprint]
 	if fp == nil {
-		panic("invalid footprint")
+		log.Fatalf("undefined footprint '%s'", c.Footprint)
 	}
 	pinCoords := fp.PinCoords[pin-1]
 	x, y = pinCoords[0], pinCoords[1]

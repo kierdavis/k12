@@ -1,5 +1,10 @@
 package main
 
+// Standard library imports
+import (
+	"log"
+)
+
 // Local imports
 import (
 	"format/footprint"
@@ -23,7 +28,7 @@ func Map(l *layout.Layout, fps map[string]*footprint.Footprint, nets netlist.Net
 		for i, node := range nodes {
 			comp := l.Components[node.Component]
 			if comp == nil {
-				panic("invalid component: " + node.Component)
+				log.Fatalf("undefined component '%s'", node.Component)
 			}
 			x, y := pinPos(comp, fps, node.Pin)
 			xs[i] = x
