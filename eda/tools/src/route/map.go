@@ -23,7 +23,7 @@ func Map(l *layout.Layout, fps map[string]*footprint.Footprint, nets netlist.Net
 		for i, node := range nodes {
 			comp := l.Components[node.Component]
 			if comp == nil {
-				panic("invalid component")
+				panic("invalid component: " + node.Component)
 			}
 			x, y := pinPos(comp, fps, node.Pin)
 			xs[i] = x

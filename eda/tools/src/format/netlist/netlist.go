@@ -31,11 +31,13 @@ func Read(r io.Reader) (nets Netlist, err error) {
 		}
 		
 		if strings.HasSuffix(line, "\\") {
-			prefix += line
+			prefix += line[:len(line)-1]
 			continue
 		}
 		
 		line = prefix + line
+		prefix = ""
+		
 		parts := whitespace.Split(line, -1)
 		net := parts[0]
 		nodes := make([]Node, 0, len(parts)-1)
