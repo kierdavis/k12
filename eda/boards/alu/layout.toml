@@ -1,0 +1,280 @@
+title = "ALU board layout"
+min_x = -12
+min_y = -7
+max_x = 54
+max_y = 35
+
+# 5 across x 6 down
+
+[components]
+  [components.U1]
+    footprint = "DIP16"
+    x = 0
+    y = 10
+    label_x = 3.5
+    label_y = 2.0
+    label_hoz_anchor = "centre"
+
+  [components.U2]
+    footprint = "DIP16"
+    x = 27
+    y = 10
+    label_x = 3.5
+    label_y = 2.0
+    label_hoz_anchor = "centre"
+
+  [components.U3]
+    footprint = "DIP14"
+    x = 9
+    y = 10
+    label_x = 3.0
+    label_y = 2.0
+    label_hoz_anchor = "centre"
+
+  [components.U4]
+    footprint = "DIP14"
+    x = 18
+    y = 10
+    label_x = 3.0
+    label_y = 2.0
+    label_hoz_anchor = "centre"
+
+  [components.U5]
+    footprint = "DIP14"
+    x = 9
+    y = 15
+    label_x = 3.0
+    label_y = 2.0
+    label_hoz_anchor = "centre"
+
+  [components.U6]
+    footprint = "DIP14"
+    x = 18
+    y = 15
+    label_x = 3.0
+    label_y = 2.0
+    label_hoz_anchor = "centre"
+
+  [components.U7]
+    footprint = "DIP14"
+    x = 0
+    y = 15
+    label_x = 3.0
+    label_y = 2.0
+    label_hoz_anchor = "centre"
+
+  [components.U8]
+    footprint = "DIP14"
+    x = 27
+    y = 15
+    label_x = 3.0
+    label_y = 2.0
+    label_hoz_anchor = "centre"
+
+  [components.U9]
+    footprint = "DIP16"
+    x = 18
+    y = 5
+    label_x = 3.5
+    label_y = 2.0
+    label_hoz_anchor = "centre"
+
+  [components.U10]
+    footprint = "DIP16"
+    x = 9
+    y = 5
+    label_x = 3.5
+    label_y = 2.0
+    label_hoz_anchor = "centre"
+
+  [components.U11]
+    footprint = "DIP14"
+    x = 0
+    y = 5
+    label_x = 3.0
+    label_y = 2.0
+    label_hoz_anchor = "centre"
+
+  [components.U12]
+    footprint = "DIP14"
+    x = 27
+    y = 5
+    label_x = 3.0
+    label_y = 2.0
+    label_hoz_anchor = "centre"
+
+  [components.U13]
+    footprint = "DIP14"
+    x = 18
+    y = 0
+    label_x = 3.0
+    label_y = 2.0
+    label_hoz_anchor = "centre"
+
+  [components.U14]
+    footprint = "DIP14"
+    x = 9
+    y = 0
+    label_x = 3.0
+    label_y = 2.0
+    label_hoz_anchor = "centre"
+
+  [components.U15]
+    footprint = "DIP14"
+    x = 0
+    y = 0
+    label_x = 3.0
+    label_y = 2.0
+    label_hoz_anchor = "centre"
+
+  [components.U16]
+    footprint = "DIP14"
+    x = 35
+    y = 5
+    label_x = 3.0
+    label_y = 2.0
+    label_hoz_anchor = "centre"
+
+  [components.U17]
+    footprint = "DIP14"
+    x = 27
+    y = 0
+    label_x = 3.0
+    label_y = 2.0
+    label_hoz_anchor = "centre"
+
+  [components.U18]
+    footprint = "DIP16"
+    x = 35
+    y = 0
+    label_x = 3.5
+    label_y = 2.0
+    label_hoz_anchor = "centre"
+
+  [components.U20]
+    footprint = "DIP16"
+    x = 27
+    y = 25
+    label_x = 3.5
+    label_y = 2.0
+    label_hoz_anchor = "centre"
+
+  [components.U21]
+    footprint = "DIP16"
+    x = 27
+    y = 20
+    label_x = 3.5
+    label_y = 2.0
+    label_hoz_anchor = "centre"
+
+  [components.U22]
+    footprint = "DIP16"
+    x = 18
+    y = 25
+    label_x = 3.5
+    label_y = 2.0
+    label_hoz_anchor = "centre"
+
+  [components.U23]
+    footprint = "DIP16"
+    x = 18
+    y = 20
+    label_x = 3.5
+    label_y = 2.0
+    label_hoz_anchor = "centre"
+
+  [components.U24]
+    footprint = "DIP16"
+    x = 9
+    y = 25
+    label_x = 3.5
+    label_y = 2.0
+    label_hoz_anchor = "centre"
+
+  [components.U25]
+    footprint = "DIP16"
+    x = 9
+    y = 20
+    label_x = 3.5
+    label_y = 2.0
+    label_hoz_anchor = "centre"
+
+  [components.U26]
+    footprint = "DIP16"
+    x = 0
+    y = 25
+    label_x = 3.5
+    label_y = 2.0
+    label_hoz_anchor = "centre"
+
+  [components.U27]
+    footprint = "DIP16"
+    x = 0
+    y = 20
+    label_x = 3.5
+    label_y = 2.0
+    label_hoz_anchor = "centre"
+
+  [components.CONN1]
+    footprint = "PADS10"
+    x = 1000
+    y = 1000
+    label_x = 4.5
+    label_y = 1.6
+    label_hoz_anchor = "centre"
+
+  [components.CONN2]
+    footprint = "PADS10"
+    x = 1000
+    y = 1000
+    label_x = 4.5
+    label_y = 1.6
+    label_hoz_anchor = "centre"
+
+  [components.CONN3]
+    footprint = "PADS10"
+    x = 1000
+    y = 1000
+    label_x = 4.5
+    label_y = 1.6
+    label_hoz_anchor = "centre"
+
+  [components.CONN4]
+    footprint = "PADS10"
+    x = 1000
+    y = 1000
+    label_x = 4.5
+    label_y = 1.6
+    label_hoz_anchor = "centre"
+
+  [components.CONN5]
+    footprint = "PADS10"
+    x = 1000
+    y = 1000
+    label_x = 4.5
+    label_y = 1.6
+    label_hoz_anchor = "centre"
+
+  [components.CONN6]
+    footprint = "PADS2"
+    x = 1000
+    y = 1000
+    label_x = 0.5
+    label_y = 1.6
+    label_hoz_anchor = "centre"
+
+  [components.S1]
+    footprint = "PADS2"
+    x = 1000
+    y = 1000
+    label_x = 0.5
+    label_y = 1.6
+    label_hoz_anchor = "centre"
+
+# Perfboard outline
+# Perfboard is 160 x 100 mm, which is 64 x 40 holes
+[[graphics]]
+  path = "M -11 -6 h 64 v 40 h -64 Z"
+  stroke = "000000"
+  stroke_width = 0.1
+  fill = "ffffcc"

@@ -1,3 +1,11 @@
+[PADS2]
+pin_coords = [
+    [0, 0], # 1
+    [1, 0], # 2
+]
+
+
+
 [PADS6]
 pin_coords = [
     [0, 0], # 1
