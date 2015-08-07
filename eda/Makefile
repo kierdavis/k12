@@ -7,6 +7,7 @@ EDA_DIR = ${BOARD_DIR}/../..
 # Subdirectories of board root containing schematics and build files.
 SCHEMATICS_DIR = ${BOARD_DIR}/schematics
 BUILD_DIR = ${BOARD_DIR}/build
+WIRES_DIR = ${BUILD_DIR}/wires
 
 # Subdirectory of EDA root containing gEDA symbol definitions.
 SYMS_DIR = ${EDA_DIR}/geda-syms
@@ -43,6 +44,10 @@ SCHEMATICS_ABS = $(shell realpath ${SCHEMATICS})
 # Perform the entire build process, by requiring the parts list and both SVGs to
 # be made.
 all: ${PARTLIST} ${INITIAL_LAYOUT_SVG} ${ROUTED_LAYOUT_SVG}
+
+# Generate individual wiring diagrams using the "render" tool.
+wires: ${RENDER_BIN} ${ROUTED_LAYOUT} ${FOOTPRINTS}
+	${RENDER_BIN} -individual-wires -output ${WIRES_DIR} ${ROUTED_LAYOUT} ${FOOTPRINTS}
 
 # Remove the build directory.
 clean:

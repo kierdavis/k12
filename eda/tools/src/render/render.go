@@ -15,7 +15,7 @@ import (
 	"format/util"
 )
 
-func render(w io.Writer, l *layout.Layout, fps map[string]*footprint.Footprint) {
+func render(w io.Writer, l *layout.Layout, wires []*layout.Wire, fps map[string]*footprint.Footprint) {
 	minX := l.MinX - 1
 	minY := l.MinY - 1
 	maxX := l.MaxX + 1
@@ -34,7 +34,7 @@ func render(w io.Writer, l *layout.Layout, fps map[string]*footprint.Footprint) 
 	
 	renderGraphics(w, l)
 	renderComponents(w, l, fps)
-	renderWires(w, l, fps)
+	renderWires(w, l, wires, fps)
 	
 	fmt.Fprint(w, "</svg>\n")
 }
@@ -72,8 +72,8 @@ func renderComponents(w io.Writer, l *layout.Layout, fps map[string]*footprint.F
 	}
 }
 
-func renderWires(w io.Writer, l *layout.Layout, fps map[string]*footprint.Footprint) {
-	for _, wire := range l.Wires {
+func renderWires(w io.Writer, l *layout.Layout, wires []*layout.Wire, fps map[string]*footprint.Footprint) {
+	for _, wire := range wires {
 		c1 := l.Components[wire.Component1]
 		if c1 == nil {
 			log.Fatalf("undefined component '%s'", wire.Component1)
