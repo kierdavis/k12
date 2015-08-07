@@ -3,6 +3,7 @@ package main
 // Standard library imports
 import (
 	"log"
+	"math"
 )
 
 // Local imports
@@ -56,12 +57,15 @@ func Map(l *layout.Layout, fps map[string]*footprint.Footprint, nets netlist.Net
 		for _, edge := range mst.Edges {
 			node1 := nodes[edge.A]
 			node2 := nodes[edge.B]
+			squaredLength := edge.Weight.(network.IntWeight)
+			length := math.Sqrt(float64(squaredLength))
 			wires = append(wires, &layout.Wire{
 				Component1: node1.Component,
 				Pin1: node1.Pin,
 				Component2: node2.Component,
 				Pin2: node2.Pin,
 				Net: net,
+				Length: length,
 			})
 		}
 	}

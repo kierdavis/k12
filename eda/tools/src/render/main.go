@@ -119,7 +119,7 @@ func doIndividualWiresRender(args Args, l *layout.Layout, fps map[string]*footpr
 		log.Fatalf("error: %s", err)
 	}
 
-	sort.Sort(wireSort{l, fps})
+	sort.Sort(byLength(l.Wires))
 
 	for i := range l.Wires {
 		filename := filepath.Join(args.outputFilename, fmt.Sprintf("wire%04d.svg", i))
@@ -135,39 +135,16 @@ func doIndividualWiresRender(args Args, l *layout.Layout, fps map[string]*footpr
 	}
 }
 
-type wireSort struct {
-	l *layout.Layout
-	fps map[string]*footprint.Footprint
+type byLength []*layout.Wire
+
+func (wires byLength) Len() int {
+	return len(wires)
 }
 
-func (w wireSort) Len() int {
-	return len(w.l.Wires)
+func (wires byLength) Less(i, j int) bool {
+	return wires[i].Length < wires[j].Length
 }
 
-func (w wireSort) Less(i, j int) bool {
-	return squaredWireLength(w.l.Wires[i], w.l, w.fps) < squaredWireLength(w.l.Wires[j], w.l, w.fps)
+func (wires byLength) Swap(i, j int) {
+	wires[i], wires[j] = wires[j], wires[i]
 }
-
-func (w wireSort) Swap(i, j int) {
-	w.l.Wires[i], w.l.Wires[j] = w.l.Wires[j], w.l.Wires[i]
-}
-
-func squaredWireLength(wire *layout.Wire, l *layout.Layout, fps map[string]*footprint.Footprint) int {
-	c1 := l.Components[wire.Component1]
-	if c1 == nil {
-		log.Fatalf("undefined component '%s'", wire.Component1)
-	}
-	x1, y1 := pinPos(c1, fps, wire.Pin1)
-
-	c2 := l.Components[wire.Component2]
-	if c2 == nil {
-		log.Fatalf("undefined component '%s'", wire.Component2)
-	}
-	x2, y2 := pinPos(c2, fps, wire.Pin2)
-
-	dx := x2 - x1
-	dy := y2 - y1
-	return dx*dx + dy*dy
-}
-
-

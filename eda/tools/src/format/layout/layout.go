@@ -46,6 +46,7 @@ type Wire struct {
 	Component2 string `toml:"component2"`
 	Pin2 int `toml:"pin2"`
 	Net string `toml:"net"`
+	Length float64 `toml:"length"`
 }
 
 func Read(r io.Reader) (layout *Layout, err error) {
