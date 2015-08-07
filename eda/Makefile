@@ -42,7 +42,7 @@ SCHEMATICS_ABS = $(shell realpath ${SCHEMATICS})
 
 # Perform the entire build process, by requiring the parts list and both SVGs to
 # be made.
-all: ${PARTLIST} ${INITAL_LAYOUT_SVG} ${ROUTED_LAYOUT_SVG}
+all: ${PARTLIST} ${INITIAL_LAYOUT_SVG} ${ROUTED_LAYOUT_SVG}
 
 # Remove the build directory.
 clean:
