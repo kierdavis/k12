@@ -15,3 +15,4 @@ _build/k12_alu_ttl_test.vvp: ${SOURCES}
 	iverilog -o _build/k12_alu_ttl_test.vvp -s k12_alu_ttl_test ${SOURCES}
 clean:
 	rm -rf _build
+.PHONY: all alu alu_ttl clean

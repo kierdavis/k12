@@ -28,3 +28,5 @@ done
 
 echo "clean:" >> $out
 echo -e "\trm -rf $build" >> $out
+
+echo ".PHONY: all" $targets "clean" >> $out
