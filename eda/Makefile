@@ -69,15 +69,15 @@ ${NETLIST}: ${BUILD_DIR} ${SCHEMATICS}
 	cd ${EDA_DIR} && gnetlist -g PCB -o ${NETLIST_ABS} ${SCHEMATICS_ABS}
 
 # Create a routed layout (build/routed.toml) using the "route" tool.
-${ROUTED_LAYOUT}: ${BUILD_DIR} ${INITIAL_LAYOUT} ${NETLIST} ${FOOTPRINTS}
+${ROUTED_LAYOUT}: ${BUILD_DIR} ${ROUTE_BIN} ${INITIAL_LAYOUT} ${NETLIST} ${FOOTPRINTS}
 	${ROUTE_BIN} -output ${ROUTED_LAYOUT} ${INITIAL_LAYOUT} ${NETLIST} ${FOOTPRINTS}
 
 # Render the unrouted layout as an SVG using the "render" tool.
-${INITIAL_LAYOUT_SVG}: ${BUILD_DIR} ${INITIAL_LAYOUT} ${FOOTPRINTS}
+${INITIAL_LAYOUT_SVG}: ${BUILD_DIR} ${RENDER_BIN} ${INITIAL_LAYOUT} ${FOOTPRINTS}
 	${RENDER_BIN} -output ${INITIAL_LAYOUT_SVG} ${INITIAL_LAYOUT} ${FOOTPRINTS}
 
 # Render the routed layout as an SVG using the "render" tool.
-${ROUTED_LAYOUT_SVG}: ${BUILD_DIR} ${ROUTED_LAYOUT} ${FOOTPRINTS}
+${ROUTED_LAYOUT_SVG}: ${BUILD_DIR} ${RENDER_BIN} ${ROUTED_LAYOUT} ${FOOTPRINTS}
 	${RENDER_BIN} -output ${ROUTED_LAYOUT_SVG} ${ROUTED_LAYOUT} ${FOOTPRINTS}
 
 .PHONY: all clean check checkschem
