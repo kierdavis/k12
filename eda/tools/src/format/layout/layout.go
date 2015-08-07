@@ -2,7 +2,6 @@ package layout
 
 // Standard library imports
 import (
-	"fmt"
 	"io"
 )
 
@@ -15,41 +14,6 @@ import (
 import (
 	"format/util"
 )
-
-type HozAnchor int
-
-const (
-	Left HozAnchor = iota
-	Centre
-	Right
-)
-
-func (a HozAnchor) MarshalText() (b []byte, err error) {
-	switch a {
-	case Left:
-		return []byte("left"), nil
-	case Centre:
-		return []byte("centre"), nil
-	case Right:
-		return []byte("right"), nil
-	default:
-		return nil, fmt.Errorf("invalid HozAnchor value")
-	}
-}
-
-func (a *HozAnchor) UnmarshalText(b []byte) (err error) {
-	switch string(b) {
-	case "left":
-		*a = Left
-	case "centre":
-		*a = Centre
-	case "right":
-		*a = Right
-	default:
-		return fmt.Errorf("invalid value for label_hoz_anchor: %q", string(b))
-	}
-	return nil
-}
 
 type Layout struct {
 	Title string `toml:"title"`
@@ -70,7 +34,6 @@ type Component struct {
 	Rotate int `toml:"rotate"` // number of 90 degree clockwise rotations
 	LabelX float64 `toml:"label_x"`
 	LabelY float64 `toml:"label_y"`
-	LabelHozAnchor HozAnchor `toml:"label_hoz_anchor"`
 }
 
 type Net struct {

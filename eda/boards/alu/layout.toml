@@ -12,208 +12,182 @@ max_y = 35
     x = 0
     y = 10
     label_x = 3.5
-    label_y = 2.0
-    label_hoz_anchor = "centre"
+    label_y = 1.5
 
   [components.U2]
     footprint = "DIP16"
     x = 27
     y = 10
     label_x = 3.5
-    label_y = 2.0
-    label_hoz_anchor = "centre"
+    label_y = 1.5
 
   [components.U3]
     footprint = "DIP14"
     x = 9
     y = 10
     label_x = 3.0
-    label_y = 2.0
-    label_hoz_anchor = "centre"
+    label_y = 1.5
 
   [components.U4]
     footprint = "DIP14"
     x = 18
     y = 10
     label_x = 3.0
-    label_y = 2.0
-    label_hoz_anchor = "centre"
+    label_y = 1.5
 
   [components.U5]
     footprint = "DIP14"
     x = 9
     y = 15
     label_x = 3.0
-    label_y = 2.0
-    label_hoz_anchor = "centre"
+    label_y = 1.5
 
   [components.U6]
     footprint = "DIP14"
     x = 18
     y = 15
     label_x = 3.0
-    label_y = 2.0
-    label_hoz_anchor = "centre"
+    label_y = 1.5
 
   [components.U7]
     footprint = "DIP14"
     x = 0
     y = 15
     label_x = 3.0
-    label_y = 2.0
-    label_hoz_anchor = "centre"
+    label_y = 1.5
 
   [components.U8]
     footprint = "DIP14"
     x = 27
     y = 15
     label_x = 3.0
-    label_y = 2.0
-    label_hoz_anchor = "centre"
+    label_y = 1.5
 
   [components.U9]
     footprint = "DIP16"
     x = 18
     y = 5
     label_x = 3.5
-    label_y = 2.0
-    label_hoz_anchor = "centre"
+    label_y = 1.5
 
   [components.U10]
     footprint = "DIP16"
     x = 9
     y = 5
     label_x = 3.5
-    label_y = 2.0
-    label_hoz_anchor = "centre"
+    label_y = 1.5
 
   [components.U11]
     footprint = "DIP14"
     x = 0
     y = 5
     label_x = 3.0
-    label_y = 2.0
-    label_hoz_anchor = "centre"
+    label_y = 1.5
 
   [components.U12]
     footprint = "DIP14"
     x = 27
     y = 5
     label_x = 3.0
-    label_y = 2.0
-    label_hoz_anchor = "centre"
+    label_y = 1.5
 
   [components.U13]
     footprint = "DIP14"
     x = 18
     y = 0
     label_x = 3.0
-    label_y = 2.0
-    label_hoz_anchor = "centre"
+    label_y = 1.5
 
   [components.U14]
     footprint = "DIP14"
     x = 9
     y = 0
     label_x = 3.0
-    label_y = 2.0
-    label_hoz_anchor = "centre"
+    label_y = 1.5
 
   [components.U15]
     footprint = "DIP14"
     x = 0
     y = 0
     label_x = 3.0
-    label_y = 2.0
-    label_hoz_anchor = "centre"
+    label_y = 1.5
 
   [components.U16]
     footprint = "DIP14"
     x = 35
     y = 5
     label_x = 3.0
-    label_y = 2.0
-    label_hoz_anchor = "centre"
+    label_y = 1.5
 
   [components.U17]
     footprint = "DIP14"
     x = 27
     y = 0
     label_x = 3.0
-    label_y = 2.0
-    label_hoz_anchor = "centre"
+    label_y = 1.5
 
   [components.U18]
     footprint = "DIP16"
     x = 35
     y = 0
     label_x = 3.5
-    label_y = 2.0
-    label_hoz_anchor = "centre"
+    label_y = 1.5
 
   [components.U20]
     footprint = "DIP16"
     x = 27
     y = 25
     label_x = 3.5
-    label_y = 2.0
-    label_hoz_anchor = "centre"
+    label_y = 1.5
 
   [components.U21]
     footprint = "DIP16"
     x = 27
     y = 20
     label_x = 3.5
-    label_y = 2.0
-    label_hoz_anchor = "centre"
+    label_y = 1.5
 
   [components.U22]
     footprint = "DIP16"
     x = 18
     y = 25
     label_x = 3.5
-    label_y = 2.0
-    label_hoz_anchor = "centre"
+    label_y = 1.5
 
   [components.U23]
     footprint = "DIP16"
     x = 18
     y = 20
     label_x = 3.5
-    label_y = 2.0
-    label_hoz_anchor = "centre"
+    label_y = 1.5
 
   [components.U24]
     footprint = "DIP16"
     x = 9
     y = 25
     label_x = 3.5
-    label_y = 2.0
-    label_hoz_anchor = "centre"
+    label_y = 1.5
 
   [components.U25]
     footprint = "DIP16"
     x = 9
     y = 20
     label_x = 3.5
-    label_y = 2.0
-    label_hoz_anchor = "centre"
+    label_y = 1.5
 
   [components.U26]
     footprint = "DIP16"
     x = 0
     y = 25
     label_x = 3.5
-    label_y = 2.0
-    label_hoz_anchor = "centre"
+    label_y = 1.5
 
   [components.U27]
     footprint = "DIP16"
     x = 0
     y = 20
     label_x = 3.5
-    label_y = 2.0
-    label_hoz_anchor = "centre"
+    label_y = 1.5
 
   [components.CONN1]
     footprint = "PADS10"

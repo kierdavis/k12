@@ -66,17 +66,7 @@ func renderComponents(w io.Writer, l *layout.Layout, fps map[string]*footprint.F
 			renderGraphic(w, graphic)
 		}
 		
-		var anchor string
-		switch comp.LabelHozAnchor {
-		case layout.Left:
-			anchor = "start"
-		case layout.Centre:
-			anchor = "middle"
-		case layout.Right:
-			anchor = "end"
-		}
-		
-		fmt.Fprintf(w, "    <text x='%f' y='%f' text-anchor='%s' font-size='1px'>%s</text>\n", comp.LabelX, comp.LabelY, anchor, refdes)
+		fmt.Fprintf(w, "    <text x='%f' y='%f' text-anchor='middle' dominant-baseline='central' font-size='1px'>%s</text>\n", comp.LabelX, comp.LabelY, refdes)
 		fmt.Fprint(w, "  </g>\n")
 	}
 }
