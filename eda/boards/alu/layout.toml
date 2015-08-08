@@ -232,14 +232,6 @@ max_y = 35
     label_x = 0.5
     label_y = -1.2
 
-  [components.S1]
-    footprint = "PADS2"
-    x = 1000
-    y = 1000
-    label_x = 0.5
-    label_y = 1.6
-    label_hoz_anchor = "centre"
-
 # Perfboard outline
 # Perfboard is 160 x 100 mm, which is 64 x 40 holes
 [[graphics]]
