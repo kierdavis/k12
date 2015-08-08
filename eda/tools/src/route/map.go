@@ -22,6 +22,7 @@ func Map(l *layout.Layout, fps map[string]*footprint.Footprint, nets netlist.Net
 	g := network.NewUndirected()
 	
 	// Route each net individually.
+mainloop:
 	for net, nodes := range nets {
 		// Obtain node coordinates.
 		xs := make([]int, len(nodes))
@@ -29,7 +30,8 @@ func Map(l *layout.Layout, fps map[string]*footprint.Footprint, nets netlist.Net
 		for i, node := range nodes {
 			comp := l.Components[node.Component]
 			if comp == nil {
-				log.Fatalf("undefined component '%s'", node.Component)
+				log.Printf("undefined component '%s'", node.Component)
+				continue mainloop
 			}
 			x, y := pinPos(comp, fps, node.Pin)
 			xs[i] = x
