@@ -190,52 +190,47 @@ max_y = 35
     label_y = 1.5
 
   [components.CONN1]
-    footprint = "PADS10"
-    x = 1000
-    y = 1000
-    label_x = 4.5
-    label_y = 1.6
-    label_hoz_anchor = "centre"
+    footprint = "PADS5X2"
+    x = 5
+    y = -4
+    label_x = 2.0
+    label_y = -1.2
 
   [components.CONN2]
-    footprint = "PADS10"
-    x = 1000
-    y = 1000
-    label_x = 4.5
-    label_y = 1.6
-    label_hoz_anchor = "centre"
+    footprint = "PADS5X2"
+    x = 12
+    y = -4
+    label_x = 2.0
+    label_y = -1.2
 
   [components.CONN3]
-    footprint = "PADS10"
-    x = 1000
-    y = 1000
-    label_x = 4.5
-    label_y = 1.6
-    label_hoz_anchor = "centre"
+    footprint = "PADS5X2"
+    x = 19
+    y = -4
+    label_x = 2.0
+    label_y = -1.2
 
   [components.CONN4]
-    footprint = "PADS10"
-    x = 1000
-    y = 1000
-    label_x = 4.5
-    label_y = 1.6
-    label_hoz_anchor = "centre"
+    footprint = "PADS5X2"
+    x = 26
+    y = -4
+    label_x = 2.0
+    label_y = -1.2
 
   [components.CONN5]
-    footprint = "PADS10"
-    x = 1000
-    y = 1000
-    label_x = 4.5
-    label_y = 1.6
-    label_hoz_anchor = "centre"
+    footprint = "PADS5X2"
+    x = 33
+    y = -4
+    label_x = 2.0
+    label_y = -1.2
 
   [components.CONN6]
     footprint = "PADS2"
-    x = 1000
-    y = 1000
+    x = 51
+    y = 2
+    rotate = 1
     label_x = 0.5
-    label_y = 1.6
-    label_hoz_anchor = "centre"
+    label_y = -1.2
 
   [components.S1]
     footprint = "PADS2"
