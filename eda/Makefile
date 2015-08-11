@@ -47,7 +47,7 @@ all: ${PARTLIST} ${INITIAL_LAYOUT_SVG} ${ROUTED_LAYOUT_SVG}
 
 # Generate individual wiring diagrams using the "render" tool.
 wires: ${RENDER_BIN} ${ROUTED_LAYOUT} ${FOOTPRINTS}
-	${RENDER_BIN} -individual-wires -output ${WIRES_DIR} ${ROUTED_LAYOUT} ${FOOTPRINTS}
+	${RENDER_BIN} -individual-wires -flip -output ${WIRES_DIR} ${ROUTED_LAYOUT} ${FOOTPRINTS}
 
 # Remove the build directory.
 clean:

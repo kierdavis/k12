@@ -22,6 +22,7 @@ type Args struct {
 	layoutFilename string
 	footprintFilenames []string
 	individualWires bool
+	flip bool
 }
 
 func parseArgs() (args Args) {
@@ -32,6 +33,7 @@ func parseArgs() (args Args) {
 	
 	flag.StringVar(&args.outputFilename, "output", "", "filename to write output SVG to")
 	flag.BoolVar(&args.individualWires, "individual-wires", false, "if given, produce a separate image for each wire (rather than showing all at once); the argument to -output is considered to be the directory in which to place these images")
+	flag.BoolVar(&args.flip, "flip", false, "if given, flip the image left-to-right, so that it shows the underside of the board")
 	flag.Parse()
 	
 	if flag.NArg() < 1 {
@@ -105,7 +107,7 @@ func doNormalRender(args Args, l *layout.Layout, fps map[string]*footprint.Footp
 	defer f.Close()
 	
 	w := bufio.NewWriter(f)
-	render(w, l, l.Wires, fps)
+	render(w, l, l.Wires, fps, args.flip)
 	w.Flush()
 }
 
@@ -129,12 +131,13 @@ func doIndividualWiresRender(args Args, l *layout.Layout, fps map[string]*footpr
 		}
 
 		w := bufio.NewWriter(f)
-		render(w, l, l.Wires[i:i+1], fps)
+		render(w, l, l.Wires[i:i+1], fps, args.flip)
 		w.Flush()
 		f.Close()
 	}
 }
 
+// Sort wires by increasing length
 type byLength []*layout.Wire
 
 func (wires byLength) Len() int {

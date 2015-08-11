@@ -15,7 +15,7 @@ import (
 	"format/util"
 )
 
-func render(w io.Writer, l *layout.Layout, wires []*layout.Wire, fps map[string]*footprint.Footprint) {
+func render(w io.Writer, l *layout.Layout, wires []*layout.Wire, fps map[string]*footprint.Footprint, flip bool) {
 	minX := l.MinX - 1
 	minY := l.MinY - 1
 	maxX := l.MaxX + 1
@@ -30,11 +30,19 @@ func render(w io.Writer, l *layout.Layout, wires []*layout.Wire, fps map[string]
 	fmt.Fprint(w, "<?xml version='1.0' standalone='no'?>\n")
 	fmt.Fprint(w, "<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">\n")
 	fmt.Fprintf(w, "<svg width='%d' height='%d' viewBox='%d %d %d %d' version='1.1' xmlns='http://www.w3.org/2000/svg'>\n", outerWidth, outerHeight, minX, minY, innerWidth, innerHeight)
-	//fmt.Fprintf(w, "  <rect x='%d' y='%d' width='%d' height='%d' stroke='#999900' stroke-width='0.1' fill='none'/>\n", l.MinX, l.MinY, innerWidth-2, innerHeight-2)
+	//fmt.Fprintf(w, "  <rect x='%d' y='%d' width='%d' height='%d' stroke='#999900' stroke-width='0.1' fill='none'/>\n", minX, minY, innerWidth, innerHeight)
+	
+	if flip {
+		fmt.Fprintf(w, "<g transform='matrix(-1 0 0 1 %d 0)'>\n", innerWidth + minX*2)
+	}
 	
 	renderGraphics(w, l)
 	renderComponents(w, l, fps)
 	renderWires(w, l, wires, fps)
+	
+	if flip {
+		fmt.Fprint(w, "</g>\n")
+	}
 	
 	fmt.Fprint(w, "</svg>\n")
 }
