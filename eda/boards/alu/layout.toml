@@ -232,6 +232,461 @@ max_y = 35
     label_x = 0.5
     label_y = -1.2
 
+  [components.R1]
+    footprint = "RESISTOR_DIAG"
+    x = -2
+    y = 30
+    rotate = 1
+    label_x = 1000.0
+
+  [components.R2]
+    footprint = "RESISTOR_DIAG"
+    x = 0
+    y = 30
+    rotate = 1
+    label_x = 1000.0
+
+  [components.R3]
+    footprint = "RESISTOR_DIAG"
+    x = 2
+    y = 30
+    rotate = 1
+    label_x = 1000.0
+
+  [components.R4]
+    footprint = "RESISTOR_DIAG"
+    x = 4
+    y = 30
+    rotate = 1
+    label_x = 1000.0
+
+  [components.R5]
+    footprint = "RESISTOR_DIAG"
+    x = 6
+    y = 30
+    rotate = 1
+    label_x = 1000.0
+
+  [components.R6]
+    footprint = "RESISTOR_DIAG"
+    x = 8
+    y = 30
+    rotate = 1
+    label_x = 1000.0
+
+  [components.R7]
+    footprint = "RESISTOR_DIAG"
+    x = 10
+    y = 30
+    rotate = 1
+    label_x = 1000.0
+
+  [components.R8]
+    footprint = "RESISTOR_DIAG"
+    x = 12
+    y = 30
+    rotate = 1
+    label_x = 1000.0
+
+  [components.R9]
+    footprint = "RESISTOR_DIAG"
+    x = 15
+    y = 30
+    rotate = 1
+    label_x = 1000.0
+
+  [components.R10]
+    footprint = "RESISTOR_DIAG"
+    x = 17
+    y = 30
+    rotate = 1
+    label_x = 1000.0
+
+  [components.R11]
+    footprint = "RESISTOR_DIAG"
+    x = 19
+    y = 30
+    rotate = 1
+    label_x = 1000.0
+
+  [components.R12]
+    footprint = "RESISTOR_DIAG"
+    x = 21
+    y = 30
+    rotate = 1
+    label_x = 1000.0
+
+  [components.R13]
+    footprint = "RESISTOR_DIAG"
+    x = 23
+    y = 30
+    rotate = 1
+    label_x = 1000.0
+
+  [components.R14]
+    footprint = "RESISTOR_DIAG"
+    x = 25
+    y = 30
+    rotate = 1
+    label_x = 1000.0
+
+  [components.R15]
+    footprint = "RESISTOR_DIAG"
+    x = 27
+    y = 30
+    rotate = 1
+    label_x = 1000.0
+
+  [components.R16]
+    footprint = "RESISTOR_DIAG"
+    x = 29
+    y = 30
+    rotate = 1
+    label_x = 1000.0
+
+  [components.R17]
+    footprint = "RESISTOR_DIAG"
+    x = 49
+    y = 24
+    label_x = 1000.0
+
+  [components.R18]
+    footprint = "RESISTOR_DIAG"
+    x = 49
+    y = 22
+    label_x = 1000.0
+
+  [components.R19]
+    footprint = "RESISTOR_DIAG"
+    x = 49
+    y = 20
+    label_x = 1000.0
+
+  [components.R20]
+    footprint = "RESISTOR_DIAG"
+    x = 49
+    y = 17
+    label_x = 1000.0
+
+  [components.R21]
+    footprint = "RESISTOR_DIAG"
+    x = 49
+    y = 15
+    label_x = 1000.0
+
+  [components.R22]
+    footprint = "RESISTOR_DIAG"
+    x = 49
+    y = 13
+    label_x = 1000.0
+
+  [components.R23]
+    footprint = "RESISTOR_DIAG"
+    x = 49
+    y = 11
+    label_x = 1000.0
+
+  [components.R24]
+    footprint = "RESISTOR_DIAG"
+    x = 49
+    y = 9
+    label_x = 1000.0
+
+  [components.R25]
+    footprint = "RESISTOR_DIAG"
+    x = 49
+    y = 7
+    label_x = 1000.0
+
+  [components.R26]
+    footprint = "RESISTOR_DIAG"
+    x = 49
+    y = 5
+    label_x = 1000.0
+
+  [components.R27]
+    footprint = "RESISTOR_DIAG"
+    x = 49
+    y = 2
+    label_x = 1000.0
+
+  [components.R28]
+    footprint = "RESISTOR_DIAG"
+    x = 32
+    y = 30
+    rotate = 1
+    label_x = 1000.0
+
+  [components.R29]
+    footprint = "RESISTOR_DIAG"
+    x = 34
+    y = 30
+    rotate = 1
+    label_x = 1000.0
+
+  [components.R30]
+    footprint = "RESISTOR_DIAG"
+    x = 36
+    y = 30
+    rotate = 1
+    label_x = 1000.0
+
+  [components.R31]
+    footprint = "RESISTOR_DIAG"
+    x = 38
+    y = 30
+    rotate = 1
+    label_x = 1000.0
+
+  [components.R32]
+    footprint = "RESISTOR_DIAG"
+    x = 40
+    y = 30
+    rotate = 1
+    label_x = 1000.0
+
+  [components.R33]
+    footprint = "RESISTOR_DIAG"
+    x = 42
+    y = 30
+    rotate = 1
+    label_x = 1000.0
+
+  [components.R34]
+    footprint = "RESISTOR_DIAG"
+    x = 44
+    y = 30
+    rotate = 1
+    label_x = 1000.0
+
+  [components.R35]
+    footprint = "RESISTOR_DIAG"
+    x = 46
+    y = 30
+    rotate = 1
+    label_x = 1000.0
+
+  [components.LED1]
+    footprint = "LED_3MM_RED"
+    x = -4
+    y = 33
+    label_x = 1000.0
+
+  [components.LED2]
+    footprint = "LED_3MM_RED"
+    x = -2
+    y = 33
+    label_x = 1000.0
+
+  [components.LED3]
+    footprint = "LED_3MM_RED"
+    x = 0
+    y = 33
+    label_x = 1000.0
+
+  [components.LED4]
+    footprint = "LED_3MM_RED"
+    x = 2
+    y = 33
+    label_x = 1000.0
+
+  [components.LED5]
+    footprint = "LED_3MM_RED"
+    x = 4
+    y = 33
+    label_x = 1000.0
+
+  [components.LED6]
+    footprint = "LED_3MM_RED"
+    x = 6
+    y = 33
+    label_x = 1000.0
+
+  [components.LED7]
+    footprint = "LED_3MM_RED"
+    x = 8
+    y = 33
+    label_x = 1000.0
+
+  [components.LED8]
+    footprint = "LED_3MM_RED"
+    x = 10
+    y = 33
+    label_x = 1000.0
+
+  [components.LED9]
+    footprint = "LED_3MM_RED"
+    x = 13
+    y = 33
+    label_x = 1000.0
+
+  [components.LED10]
+    footprint = "LED_3MM_RED"
+    x = 15
+    y = 33
+    label_x = 1000.0
+
+  [components.LED11]
+    footprint = "LED_3MM_RED"
+    x = 17
+    y = 33
+    label_x = 1000.0
+
+  [components.LED12]
+    footprint = "LED_3MM_RED"
+    x = 19
+    y = 33
+    label_x = 1000.0
+
+  [components.LED13]
+    footprint = "LED_3MM_RED"
+    x = 21
+    y = 33
+    label_x = 1000.0
+
+  [components.LED14]
+    footprint = "LED_3MM_RED"
+    x = 23
+    y = 33
+    label_x = 1000.0
+
+  [components.LED15]
+    footprint = "LED_3MM_RED"
+    x = 25
+    y = 33
+    label_x = 1000.0
+
+  [components.LED16]
+    footprint = "LED_3MM_RED"
+    x = 27
+    y = 33
+    label_x = 1000.0
+
+  [components.LED17]
+    footprint = "LED_3MM_RED"
+    x = 52
+    y = 26
+    rotate = 3
+    label_x = 1000.0
+
+  [components.LED18]
+    footprint = "LED_3MM_RED"
+    x = 52
+    y = 24
+    rotate = 3
+    label_x = 1000.0
+
+  [components.LED19]
+    footprint = "LED_3MM_RED"
+    x = 52
+    y = 22
+    rotate = 3
+    label_x = 1000.0
+
+  [components.LED20]
+    footprint = "LED_3MM_RED"
+    x = 52
+    y = 19
+    rotate = 3
+    label_x = 1000.0
+
+  [components.LED21]
+    footprint = "LED_3MM_RED"
+    x = 52
+    y = 17
+    rotate = 3
+    label_x = 1000.0
+
+  [components.LED22]
+    footprint = "LED_3MM_RED"
+    x = 52
+    y = 15
+    rotate = 3
+    label_x = 1000.0
+
+  [components.LED23]
+    footprint = "LED_3MM_RED"
+    x = 52
+    y = 13
+    rotate = 3
+    label_x = 1000.0
+
+  [components.LED24]
+    footprint = "LED_3MM_RED"
+    x = 52
+    y = 11
+    rotate = 3
+    label_x = 1000.0
+
+  [components.LED25]
+    footprint = "LED_3MM_RED"
+    x = 52
+    y = 9
+    rotate = 3
+    label_x = 1000.0
+
+  [components.LED26]
+    footprint = "LED_3MM_RED"
+    x = 52
+    y = 7
+    rotate = 3
+    label_x = 1000.0
+
+  [components.LED27]
+    footprint = "LED_3MM_RED"
+    x = 52
+    y = 4
+    rotate = 3
+    label_x = 1000.0
+
+  [components.LED28]
+    footprint = "LED_3MM_RED"
+    x = 30
+    y = 33
+    label_x = 1000.0
+
+  [components.LED29]
+    footprint = "LED_3MM_RED"
+    x = 32
+    y = 33
+    label_x = 1000.0
+
+  [components.LED30]
+    footprint = "LED_3MM_RED"
+    x = 34
+    y = 33
+    label_x = 1000.0
+
+  [components.LED31]
+    footprint = "LED_3MM_RED"
+    x = 36
+    y = 33
+    label_x = 1000.0
+
+  [components.LED32]
+    footprint = "LED_3MM_RED"
+    x = 38
+    y = 33
+    label_x = 1000.0
+
+  [components.LED33]
+    footprint = "LED_3MM_RED"
+    x = 40
+    y = 33
+    label_x = 1000.0
+
+  [components.LED34]
+    footprint = "LED_3MM_RED"
+    x = 42
+    y = 33
+    label_x = 1000.0
+
+  [components.LED35]
+    footprint = "LED_3MM_RED"
+    x = 44
+    y = 33
+    label_x = 1000.0
+
 # Perfboard outline
 # Perfboard is 160 x 100 mm, which is 64 x 40 holes
 [[graphics]]

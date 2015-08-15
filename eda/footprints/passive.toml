@@ -1,0 +1,41 @@
+[RESISTOR]
+pin_coords = [
+    [0, 0], # 1
+    [4, 0], # 2
+]
+
+[[RESISTOR.graphics]]
+path = "M 0.5 -0.5 h 3 v 1 h -3 Z M 0 0 h 0.5 M 4 0 h -0.5"
+stroke = "000000"
+stroke_width = 0.1
+fill = "ffffff"
+
+
+
+[RESISTOR_DIAG]
+pin_coords = [
+    [0, 0], # 1
+    [2, 2], # 2
+]
+
+[[RESISTOR_DIAG.graphics]]
+path = "M 0.75 0.25 l 1 1 l -0.5 0.5 l -1 -1 Z M 0 0 l 0.5 0.5 M 2 2 l -0.5 -0.5"
+stroke = "000000"
+stroke_width = 0.1
+fill = "ffffff"
+
+
+
+[LED_3MM_RED]
+pin_coords = [
+    [0, 0], # 1 (anode)
+    [1, 0], # 2 (cathode)
+]
+
+# radius = 1.5 mm = 0.0591 inches = 0.591 units
+[[LED_3MM_RED.graphics]]
+#path = "M [0.5 + r cos 45] [r sin 45] A [r] [r] 0 1 0 [0.5 + r cos 45] [-r sin 45] Z"
+path = "M 0.918 0.418 A 0.591 0.591 0 1 1 0.918 -0.418 Z"
+stroke = "000000"
+stroke_width = 0.1
+fill = "ff000077"
