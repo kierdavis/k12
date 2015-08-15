@@ -226,9 +226,9 @@ max_y = 35
 
   [components.CONN6]
     footprint = "PADS2_POLAR"
-    x = 51
-    y = 2
-    rotate = 1
+    x = -9
+    y = 3
+    rotate = 3
     label_x = 0.5
     label_y = -1.2
 
