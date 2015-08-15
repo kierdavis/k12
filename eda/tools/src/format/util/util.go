@@ -12,11 +12,8 @@ type Color struct {
 }
 
 func (c Color) MarshalText() (b []byte, err error) {
-	if c.RGBA.A == 0x00 {
-		return []byte("none"), nil
-	}
-	b = make([]byte, 6)
-	hex.Encode(b, []byte{c.RGBA.R, c.RGBA.G, c.RGBA.B})
+	b = make([]byte, 8)
+	hex.Encode(b, []byte{c.RGBA.R, c.RGBA.G, c.RGBA.B, c.RGBA.A})
 	return b, nil
 }
 
@@ -29,18 +26,23 @@ func (c *Color) UnmarshalText(b []byte) (err error) {
 		c.RGBA.A = 0x00
 		return nil
 	}
-	if len(b) != 6 {
-		return fmt.Errorf("Color.UnmarshalText: expected a 6-character hexadecimal string in the form RRGGBB, or \"none\" (not %q)", s)
+	var buf [4]byte
+	switch len(b) {
+	case 6:
+		_, err = hex.Decode(buf[:3], b)
+		buf[3] = 0xFF
+	case 8:
+		_, err = hex.Decode(buf[:], b)
+	default:
+		return fmt.Errorf("Color.UnmarshalText: expected a hexadecimal string in the form RRGGBB or RRGGBBAA, or \"none\" (not %q)", s)
 	}
-	var buf [3]byte
-	_, err = hex.Decode(buf[:], b)
 	if err != nil {
-		return fmt.Errorf("Color.UnmarshalText: expected a 6-character hexadecimal string in the form RRGGBB, or \"none\" (not %q)", s)
+		return fmt.Errorf("Color.UnmarshalText: expected a hexadecimal string in the form RRGGBB or RRGGBBAA, or \"none\" (not %q)", s)
 	}
 	c.RGBA.R = buf[0]
 	c.RGBA.G = buf[1]
 	c.RGBA.B = buf[2]
-	c.RGBA.A = 0xFF
+	c.RGBA.A = buf[3]
 	return nil
 }
 

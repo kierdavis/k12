@@ -120,13 +120,19 @@ func pinPos(c *layout.Component, fps map[string]*footprint.Footprint, pin int) (
 }
 
 func renderGraphic(w io.Writer, graphic *util.Graphic) {
-	fmt.Fprintf(w, "    <path d='%s' stroke='%s' stroke-width='%f' fill='%s'/>\n", graphic.Path, colorStr(graphic.Stroke), graphic.StrokeWidth, colorStr(graphic.Fill))
+	fmt.Fprintf(w, "    <path d='%s' stroke='%s' stroke-width='%f' stroke-opacity='%f' fill='%s' fill-opacity='%f'/>\n",
+		graphic.Path,
+		colorStr(graphic.Stroke),
+		graphic.StrokeWidth,
+		float64(graphic.Stroke.A) / 255,
+		colorStr(graphic.Fill),
+		float64(graphic.Fill.A) / 255)
 }
 
 func colorStr(c util.Color) (s string) {
-	s = "none"
-	if c.RGBA.A == 0xFF {
-		s = fmt.Sprintf("#%02X%02X%02X", c.RGBA.R, c.RGBA.G, c.RGBA.B)
+	if c.RGBA.A == 0x00 {
+		return "none"
+	} else {
+		return fmt.Sprintf("#%02X%02X%02X", c.RGBA.R, c.RGBA.G, c.RGBA.B)
 	}
-	return s
 }
