@@ -28,7 +28,7 @@ type Stack struct {
 }
 
 func (stack *Stack) Read() (x uint8) {
-	n := len(stack)
+	n := len(stack.Data)
 	if n > 0 {
 		x = stack.Data[n-1]
 		stack.Data = stack.Data[:n-1]
