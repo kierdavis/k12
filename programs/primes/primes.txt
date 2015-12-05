@@ -1,0 +1,107 @@
+; primes
+; Runs a prime sieve, displaying each number in decimal on a three-digit seven-segment display.
+
+; Method:
+;   Set every byte in a 256-byte buffer to 1.
+;   Iterate over each byte in the buffer.
+;   If it is a 1, it is a prime. Set all multiples of the index of that byte to 0, marking them as non-prime.
+
+; Assumed I/O ports:
+;   0 - left digit of the 7seg display
+;   1 - centre digit
+;   2 - right digit
+; It is also assumed that the I/O ports have built-in BCD-to-7seg decoders
+
+
+; Address of buffer in data memory.
+; Buffer is 256 bytes, each representing a possible prime.
+@define BUFFER_START_H 0x10
+@define BUFFER_START_L 0x00
+
+; Memory addresses for local variables.
+@define PRIME      0x0000  ; Current prime number
+@define DIVMOD10_Q 0x0001  ; Quotient return value
+@define DIVMOD10_R 0x0002  ; Dividend argument, remainder return value
+
+; I/O ports
+@define IO_DISP_L 0
+@define IO_DISP_C 1
+@define IO_DISP_R 2
+
+
+; Initialise the buffer.
+init:
+    mov C, BUFFER_START_H       ; Set CD to buffer start address.
+    mov D, BUFFER_START_L
+init_loop:
+    mov A, 1                    ; Set value at address CD to 1.
+    st [CD], A
+    inc CD                      ; Increment CD.
+    mov A, D
+    skeq A, 0                   ; Unless D is 0,
+    rjmp init_loop              ;   jump to back init_loop.
+
+; Main loop.
+main:
+    mov C, BUFFER_START_H       ; Set CD to buffer start address + 2.
+    mov D, BUFFER_START_L+2     ; We skip 0 and 1 since we know they are not prime.
+main_loop:
+    ld A, [CD]                  ; Load the current number.
+    skne A, 0                   ; Unless it is marked as prime,
+    rjmp not_prime              ;   jump to not_prime.
+show_number:
+    mov A, D                    ; Copy buffer index (the number we now know is prime) into A.
+    st [PRIME], A               ; Save current prime into memory.
+    st [DIVMOD10_R], A          ; Call divmod10, passing the prime number as the dividend.
+    rcall divmod10
+    ld A, [DIVMOD10_R]          ; Set rightmost display to the remainder.
+    out IO_DISP_R, A
+    ld A, [DIVMOD10_Q]          ; Call divmod10 again, using the quotient from the previous division as the dividend.
+    st [DIVMOD10_R], A
+    rcall divmod10
+    ld A, [DIVMOD10_R]          ; Set central display to the remainder.
+    out IO_DISP_C, A
+    ld A, [DIVMOD10_Q]          ; Set leftmost display to the quotient.
+    out IO_DISP_L, A
+    mov C, BUFFER_START_H       ; Restore contents of C, since it was clobbered by the subroutine calls.
+mark_multiples:
+    ld A, [PRIME]               ; Fetch current prime number back from memory and save it in B.
+    mov B, A
+    mov D, B                    ; Restore contents of D to the current prime.
+mark_multiples_loop:
+    mov A, D                    ; Add B to D, increasing the buffer pointer to the next multiple of the current prime.
+    mov D, A + B
+    mov A, D                    ; Copy new value of D to A.
+    skugt A, B                  ; Unless A > B,
+    rjmp mark_multiples_done    ;   jump to mark_multiples_done since the addition overflowed.
+    mov A, 0                    ; Set [CD] to 0.
+    st [CD], A
+    rjmp mark_multiples_loop    ; Repeat.
+mark_multiples_done:
+    mov D, B                    ; Restore contents of D to the current prime.
+not_prime:
+    inc CD                      ; Increment CD.
+    mov A, D
+    skeq A, 0                   ; Unless D == 0,
+    rjmp main_loop              ;   repeat main loop from the beginning.
+    halt                        ; We are done.
+
+; Subroutine to find the quotient and remainder when dividing by 10 using a naive division algorithm.
+; Arguments:
+;   [DIVMOD10_R] - Dividend
+; Returns:
+;   [DIVMOD10_Q] - Quotient
+;   [DIVMOD10_R] - Remainder
+divmod10:
+    mov A, 0                ; Set DIVMOD10_Q to 0.
+    st [DIVMOD10_Q], A
+divmod10_loop:
+    ld A, [DIVMOD10_R]      ; Load DIVMOD10_R.
+    skuge A, 10             ; Unless DIVMOD10_R is greater than or equal to 10 (unsigned),
+    ljmp                    ;   return from the subroutine.
+    mov A, A - 10           ; Subtract 10 from DIVMOD10_R.
+    st [DIVMOD10_R], A
+    ld A, [DIVMOD10_Q]      ; Increment DIVMOD10_Q.
+    mov A, A + 1
+    st [DIVMOD10_Q], A
+    rjmp divmod10_loop      ; Repeat.
