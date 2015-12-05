@@ -2,7 +2,7 @@ package network
 
 // Standard library imports
 import (
-    "fmt"
+	"fmt"
 )
 
 type Node uint
@@ -33,8 +33,8 @@ func (w FloatWeight) Add(other Weight) Weight {
 }
 
 type Edge struct {
-	A Node
-	B Node
+	A      Node
+	B      Node
 	Weight Weight
 }
 
@@ -51,16 +51,16 @@ func (g *Undirected) Reset() {
 }
 
 func (g *Undirected) Dump() {
-    for _, edge := range g.Edges {
-        fmt.Printf("[%d] -> [%d] (weight %v)\n", edge.A, edge.B, edge.Weight)
-    }
+	for _, edge := range g.Edges {
+		fmt.Printf("[%d] -> [%d] (weight %v)\n", edge.A, edge.B, edge.Weight)
+	}
 }
 
 func (g *Undirected) Weight() Weight {
 	if len(g.Edges) == 0 {
 		return nil
 	}
-	
+
 	w := g.Edges[0].Weight
 	for _, edge := range g.Edges[1:] {
 		w = w.Add(edge.Weight)
@@ -94,12 +94,12 @@ func (g *Undirected) Neighbours(node Node) (nodes []Node) {
 
 func (g *Undirected) Nodes() (nodes []Node) {
 	var set nodeSet
-	
+
 	for _, edge := range g.Edges {
 		set.insert(edge.A)
 		set.insert(edge.B)
 	}
-	
+
 	return []Node(set)
 }
 
@@ -116,17 +116,17 @@ func (g *Undirected) HasNode(node Node) bool {
 // https://en.wikipedia.org/wiki/Prim%27s_algorithm
 func (g *Undirected) MinimalSpanningTree() (mst *Undirected) {
 	mst = NewUndirected()
-	
+
 	nodes := g.Nodes()
 	numNodes := len(g.Nodes())
 	if numNodes == 0 {
 		return mst
 	}
-	
+
 	// Begin with tree containing only the start node.
 	var nodesInMST nodeSet
 	nodesInMST.insert(nodes[0])
-	
+
 	for len(nodesInMST) < numNodes {
 		// Find the lowest weight edge connecting a node in the tree to a node
 		// not in the tree.
@@ -135,7 +135,7 @@ func (g *Undirected) MinimalSpanningTree() (mst *Undirected) {
 		for _, edge := range g.Edges {
 			hasA := nodesInMST.has(edge.A)
 			hasB := nodesInMST.has(edge.B)
-			
+
 			if (hasA && !hasB) || (hasB && !hasA) {
 				// edge is a candidate for addition
 				if !hasBest || edge.Weight.Less(bestEdge.Weight) {
@@ -144,11 +144,11 @@ func (g *Undirected) MinimalSpanningTree() (mst *Undirected) {
 				}
 			}
 		}
-		
+
 		if hasBest == false {
 			panic("something went wrong (Prim's algorithm ran out of edges before all nodes were added to the MST)")
 		}
-		
+
 		// Add edge to tree and add node to node set.
 		mst.Edges = append(mst.Edges, bestEdge)
 		if nodesInMST.has(bestEdge.A) {
@@ -157,7 +157,7 @@ func (g *Undirected) MinimalSpanningTree() (mst *Undirected) {
 			nodesInMST.insert(bestEdge.A)
 		}
 	}
-	
+
 	return mst
 }
 
@@ -186,7 +186,7 @@ func (ss *nodeSet) insert(node Node) {
 			// insert before this position
 			// first, shift all elements from i onwards forwards one place
 			s = append(s, 0)
-			for j := len(s)-2; j >= i; j-- {
+			for j := len(s) - 2; j >= i; j-- {
 				s[j+1] = s[j]
 			}
 			// then set position i to the new element

@@ -16,8 +16,8 @@ import (
 )
 
 type Footprint struct {
-	PinCoords [][2]int `toml:"pin_coords"`
-	Graphics []*util.Graphic `toml:"graphics"`
+	PinCoords [][2]int        `toml:"pin_coords"`
+	Graphics  []*util.Graphic `toml:"graphics"`
 }
 
 func Read(r io.Reader) (footprints map[string]*Footprint, err error) {

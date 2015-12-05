@@ -47,8 +47,8 @@ func (c *Color) UnmarshalText(b []byte) (err error) {
 }
 
 type Graphic struct {
-    Path string `toml:"path"`
-    Stroke Color `toml:"stroke"`
-    StrokeWidth float64 `toml:"stroke_width"`
-    Fill Color `toml:"fill"`
+	Path        string  `toml:"path"`
+	Stroke      Color   `toml:"stroke"`
+	StrokeWidth float64 `toml:"stroke_width"`
+	Fill        Color   `toml:"fill"`
 }

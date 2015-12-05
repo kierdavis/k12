@@ -13,8 +13,8 @@ var fib = []uint16{
 func main() {
 	em := emulator.New()
 	em.Trace = emulator.SimpleTrace
-    em.OutputPorts[0] = emulator.DebugOutputPort{}
+	em.OutputPorts[0] = emulator.DebugOutputPort{}
 	em.LoadProgram(fib, 0)
-	
+
 	em.Run(60)
 }

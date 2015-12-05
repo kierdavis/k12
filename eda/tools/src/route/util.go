@@ -34,16 +34,16 @@ func measure(l *layout.Layout, fps map[string]*footprint.Footprint) (totalLength
 			panic("invalid component")
 		}
 		x1, y1 := pinPos(c1, fps, wire.Pin1)
-		
+
 		c2 := l.Components[wire.Component2]
 		if c2 == nil {
 			panic("invalid component")
 		}
 		x2, y2 := pinPos(c2, fps, wire.Pin2)
-		
+
 		dx, dy := x2-x1, y2-y1
 		totalLength += math.Sqrt(float64(dx*dx + dy*dy))
 	}
-	
+
 	return totalLength
 }

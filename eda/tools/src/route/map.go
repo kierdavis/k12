@@ -18,9 +18,9 @@ import (
 // It is assumed that the netlist is valid (no net has less than two nodes etc.)
 func Map(l *layout.Layout, fps map[string]*footprint.Footprint, nets netlist.Netlist) {
 	var wires []*layout.Wire
-	
+
 	g := network.NewUndirected()
-	
+
 	// Route each net individually.
 mainloop:
 	for net, nodes := range nets {
@@ -37,24 +37,24 @@ mainloop:
 			xs[i] = x
 			ys[i] = y
 		}
-		
+
 		// Add an edge between between each pair of nodes.
 		g.Reset()
 		for i := 0; i < len(nodes); i++ {
 			x1, y1 := xs[i], ys[i]
-			
-			for j := i+1; j < len(nodes); j++ {
+
+			for j := i + 1; j < len(nodes); j++ {
 				x2, y2 := xs[j], ys[j]
 				dx, dy := x2-x1, y2-y1
 				lengthSquared := dx*dx + dy*dy
-				
+
 				g.AddEdge(network.Node(i), network.Node(j), network.IntWeight(lengthSquared))
 			}
 		}
-		
+
 		// Generate a minimal spanning tree.
 		mst := g.MinimalSpanningTree()
-		
+
 		// Add wires to the layout where edges were placed in the MST.
 		for _, edge := range mst.Edges {
 			node1 := nodes[edge.A]
@@ -63,18 +63,17 @@ mainloop:
 			length := math.Sqrt(float64(squaredLength))
 			wires = append(wires, &layout.Wire{
 				Component1: node1.Component,
-				Pin1: node1.Pin,
+				Pin1:       node1.Pin,
 				Component2: node2.Component,
-				Pin2: node2.Pin,
-				Net: net,
-				Length: length,
+				Pin2:       node2.Pin,
+				Net:        net,
+				Length:     length,
 			})
 		}
 	}
-	
+
 	l.Wires = wires
 }
-
 
 /*
 // Convert the given netlist into a set of wires, which are attached to the
@@ -99,12 +98,12 @@ func Map(l *layout.Layout, fps map[string]*footprint.Footprint, nets netlist.Net
 			numPins++
 		}
 	}
-	
+
 	meanX := int(float64(totalX) / float64(numPins))
 	meanY := int(float64(totalY) / float64(numPins))
-	
+
 	var wires []*layout.Wire
-	
+
 	for len(positions) > 0 {
 		// find the node furthest from the centre
 		var bestNode netlist.Node
@@ -117,15 +116,15 @@ func Map(l *layout.Layout, fps map[string]*footprint.Footprint, nets netlist.Net
 				bestNode = node
 			}
 		}
-		
+
 		node1 := bestNode
 		pos1 := positions[node1]
 		net := revNets[node1]
-		
+
 		// this node is already considered placed, so remove it from positions & revNets
 		delete(positions, node1)
 		delete(revNets, node1)
-		
+
 		// begin routing wires from this node
 		nodes := nets[net]
 		nodesToRoute := len(nodes) - 1
@@ -167,7 +166,7 @@ func Map(l *layout.Layout, fps map[string]*footprint.Footprint, nets netlist.Net
 			nodesToRoute--
 		}
 	}
-	
+
 	l.WireLayers = append(l.WireLayers, &layout.WireLayer{
 		Wires: wires,
 	})

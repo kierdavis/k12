@@ -16,24 +16,24 @@ import (
 )
 
 type Layout struct {
-	Title string `toml:"title"`
-	MinX int `toml:"min_x"`
-	MinY int `toml:"min_y"`
-	MaxX int `toml:"max_x"`
-	MaxY int `toml:"max_y"`
+	Title      string                `toml:"title"`
+	MinX       int                   `toml:"min_x"`
+	MinY       int                   `toml:"min_y"`
+	MaxX       int                   `toml:"max_x"`
+	MaxY       int                   `toml:"max_y"`
 	Components map[string]*Component `toml:"components"`
-	Nets map[string]*Net `toml:"nets"`
-	Wires []*Wire `toml:"wires"`
-	Graphics []*util.Graphic `toml:"graphics"`
+	Nets       map[string]*Net       `toml:"nets"`
+	Wires      []*Wire               `toml:"wires"`
+	Graphics   []*util.Graphic       `toml:"graphics"`
 }
 
 type Component struct {
-	Footprint string `toml:"footprint"`
-	X int `toml:"x"`
-	Y int `toml:"y"`
-	Rotate int `toml:"rotate"` // number of 90 degree clockwise rotations
-	LabelX float64 `toml:"label_x"`
-	LabelY float64 `toml:"label_y"`
+	Footprint string  `toml:"footprint"`
+	X         int     `toml:"x"`
+	Y         int     `toml:"y"`
+	Rotate    int     `toml:"rotate"` // number of 90 degree clockwise rotations
+	LabelX    float64 `toml:"label_x"`
+	LabelY    float64 `toml:"label_y"`
 }
 
 type Net struct {
@@ -41,12 +41,12 @@ type Net struct {
 }
 
 type Wire struct {
-	Component1 string `toml:"component1"`
-	Pin1 int `toml:"pin1"`
-	Component2 string `toml:"component2"`
-	Pin2 int `toml:"pin2"`
-	Net string `toml:"net"`
-	Length float64 `toml:"length"`
+	Component1 string  `toml:"component1"`
+	Pin1       int     `toml:"pin1"`
+	Component2 string  `toml:"component2"`
+	Pin2       int     `toml:"pin2"`
+	Net        string  `toml:"net"`
+	Length     float64 `toml:"length"`
 }
 
 func Read(r io.Reader) (layout *Layout, err error) {
