@@ -25,7 +25,7 @@ First, install `gb` if you haven't already:
 
     go get github.com/constabulary/gb/...
 
-Then, make sure you are in this directory (`REPO/eda/tools`) and run:
+Then, make sure you are in this directory (`REPO/eda/tools/go`) and run:
 
     gb build all
 
