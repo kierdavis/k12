@@ -1,3 +1,5 @@
+**PLEASE NOTE: I no longer actively maintain this project. Pull requests are welcome, but development has halted and issues are unlikely to gain a response.**
+
 # K12
 
 K12 is a project to design & build a working 8-bit CPU out of 7400-series TTL
